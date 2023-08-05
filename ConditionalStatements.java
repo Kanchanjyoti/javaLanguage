@@ -8,7 +8,7 @@ public class ConditionalStatements{
     //  int B= sc.nextInt();
     //  int C= sc.nextInt();
     // int marks= sc.nextInt();
-    int number = sc.nextInt();
+    // int number = sc.nextInt();
 
         // Print the largest of 2 
 
@@ -69,5 +69,34 @@ public class ConditionalStatements{
 //  2. odd or even 
 // String status = (number %2 == 0)? "even": "odd";
 //      System.out.print("The number is "+ status );
+
+    // ***************8****************8*****************8************
+
+  // switch statements 
+        // calculator
+
+        // int a = sc.nextInt();
+        // int b = sc.nextInt();
+        // char operator = sc.next().charAt(0);
+        // switch(operator){
+        //   case '+':
+        //       System.out.print(a+b);
+        //     break;
+        //   case '-': 
+        //       System.out.print(a-b);
+        //     break;
+        //     case '*':
+        //       System.out.print(a*b);
+        //       break;
+        //     case '/': 
+        //       System.out.print(a/b);
+        //       break;
+        //     default: 
+              // System.out.print("invalid operator");
+        }
+          
+          
+        }
+
      }
-    }
+    
