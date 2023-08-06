@@ -1,102 +1,68 @@
 import java.util.*;
-public class ConditionalStatements{
-    public static void main(String args[]){
-     Scanner sc = new Scanner(System.in);
-    //  int income= sc.nextInt();
 
-    //  int A= sc.nextInt();
-    //  int B= sc.nextInt();
-    //  int C= sc.nextInt();
-    // int marks= sc.nextInt();
-    // int number = sc.nextInt();
+public class ConditionalStatements {
 
-        // Print the largest of 2 
+  public static void main(String args[]) {
+    Scanner sc = new Scanner(System.in);
 
-     /*if(A>B){
-        System.out.print("A is largest of 2");
-     }
-     else{
-        System.out.print("B is largest of 2");*/
+    // Problem 1. Check whether the number is negative or positive
 
-    // ***************8****************8*****************8************
-    //  Check whether number is even or odd
-   /* if ((A%2) == 0){
-        System.out.print("The number is even");
+    /*    int num = sc.nextInt();
+      String result = (num < 0)? " negative ":" positive ";
+       System.out.print("The given number is "+ result);       */
+
+    // Problem 2. Check out the unfinished code
+    /*   double temp = 103.25;
+
+    if(temp>100){
+      System.out.print("You have fever");
 
     }
     else{
-        System.out.print("The number is odd");
+      System.out.print("You don't have a fever");     */
 
-    }*/
-    // ***************8****************8*****************8************
+    // Problem 3. Print the name of day based on inputed number from 1-7
 
-    // INcome tax problem
+    /*     int input = sc.nextInt();
+         switch (input){
+        case 1: System.out.print("Today is monday");
+                break;
 
-      /*if(income <=500000){
-        System.out.print("NO Tax");
-      }
-      else if(income>500000 && income <1000000){
-        System.out.print("The tax will be "+ income*0.2);
-      }
-      else{
-        System.out.print("The tax will be "+ income*0.3);
-      }
-*/
-    // ***************8****************8*****************8************
-    // greatest of three numbers
+        case 2: System.out.print("Today is tuesday");
+                break;
+                
+        case 3: System.out.print("Today is wednesday");
+                break;
 
-    /*
-    if(A>B && A> C){
-        System.out.print(A +" is greater");
+        case 4: System.out.print("Today is thursday");
+                break;
 
-    }
-    else if(B>C){
-        System.out.print(B +" is greater");
+        case 5: System.out.print("Today is friday");
+                break;
 
-    }
-    else{
-        System.out.print(C+" is greater");
-    }
-    */
-    // ***************8****************8*****************8************
+        case 6: System.out.print("Today is saturday"); 
+                break;
 
-// ternary operator
-//1. Pass or Fail
+        case 7: System.out.print("Today is sunday");
+                break;
 
-// String outcome = (marks>33)? "Pass":"Fail";
-// System.out.print("The student is "+ outcome);
+        default: System.out.print("Not valid day");          */
 
-//  2. odd or even 
-// String status = (number %2 == 0)? "even": "odd";
-//      System.out.print("The number is "+ status );
+    // Problem 4. Given year is leap year or not
 
-    // ***************8****************8*****************8************
-
-  // switch statements 
-        // calculator
-
-        // int a = sc.nextInt();
-        // int b = sc.nextInt();
-        // char operator = sc.next().charAt(0);
-        // switch(operator){
-        //   case '+':
-        //       System.out.print(a+b);
-        //     break;
-        //   case '-': 
-        //       System.out.print(a-b);
-        //     break;
-        //     case '*':
-        //       System.out.print(a*b);
-        //       break;
-        //     case '/': 
-        //       System.out.print(a/b);
-        //       break;
-        //     default: 
-              // System.out.print("invalid operator");
+/*    int year = sc.nextInt();
+    if (year % 4 == 0) {
+      if (year % 100 == 0) {
+        if (year % 400 == 0) {
+          System.out.print("The given year is a leap year");
+        } else {
+          System.out.print("The given year is not a leap year ");
         }
-          
-          
-        }
-
-     }
-    
+      } else {
+        System.out.print("The given year is a leap year");
+      }
+    } else {
+      System.out.print("The given year is not a leap year ");
+    }                                                                 */
+  }
+}

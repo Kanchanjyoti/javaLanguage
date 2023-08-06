@@ -2,58 +2,42 @@ import java.util.*;
 
 public class Variables_Datatypes{
     public static void main(String args[]){
-
-        /*
-        System.out.print("hello world \n");   // \n 
-        System.out.println("hello world");    // println
-        System.out.print("hello world \n");
-
-        // simply making a pattern
-        System.out.println("* * * * ");
-        System.out.println("* * * ");
-        System.out.println("* *  ");
-        System.out.println("* ");      
-
-        // sum of a and b 
-         
-         int a , b , sum ;
-         a= 20;
-         b=10;
-         sum = a+b;
-         System.out.println( sum );
-
-         // Input in java
-         Scanner sc = new Scanner(System.in);
-         String word= sc.nextLine();
-         System.out.print(word);
-        //  int integer= sc.nextInt();
-        //  Byte smallInt= sc.nextByte();
-        //  float decimal = sc.nextFloat();
-        //  Boolean bigDecimal = sc.nextBoolean(); 
-
-
-        // Sum of two numbers
-
         Scanner sc = new Scanner(System.in);
-        int a = sc.nextInt();
+        // Problem 1. Average of three numbers 
+
+ /*     int a = sc.nextInt();
         int b = sc.nextInt();
-        System.out.print(a+b);    
+        int c = sc.nextInt();
 
+        float avg = (a+b+c)/3;
+        System.out.print(avg);     */
 
-        // product of two numbers
+       // Problem 2. Area of square while taking an input from user 
 
-        Scanner sc= new Scanner(System.in);
-        int a= sc.nextInt();
-        int b= sc.nextInt();
-        System.out.print(a*b);  */
+/*    float side= sc.nextFloat();
+      float area= side*side;
+      System.out.print(area);      */
 
+      // problem 3. To find the total price of inputed elements by the user 
 
-        // Area of Circle
+/*    float pencilRate = sc.nextFloat();
+      float EraserRate = sc.nextFloat();
+      float ScaleRate = sc.nextFloat();
+      float totalRate= pencilRate+ EraserRate+ ScaleRate ;
+      System.out.print(totalRate);   */
 
-        Scanner sc= new Scanner(System.in);
-        float radius= sc.nextFloat();
-        double area = 3.14 *radius*radius;
-        System.out.print(area);
+    // problem 4. IN which datatype we store this result 
 
-    }
+/*  byte b =4;
+    char c='a';
+    short s = 512;
+    int i = 1000;
+    float f = 99.94f;
+    double d= 14.25478;
+
+    double result = ( f * b) + (i % c) - (d * s);
+    System.out.print(result);       */
+
+    //  int $= 23;             // --------> we can initialize this way too 
+ }
 }
