@@ -1,124 +1,72 @@
-import java.util.*;
 public class FunctionsIn{
 
-    // function to add two numbers
- /*   public static int sum(int a, int b){
-        return a+b; 
-    }
-    public static void main(String args[]){
-       Scanner sc= new Scanner(System.in);
-       int a= sc.nextInt();
-       int b= sc.nextInt();
-       System.out.print("The sum will be "+ sum(a,b));  */
+   // Problem 1. Calculate the average of threee numbers 
+     
+   //   public static double average(int a, int b, int c){
+   //    return (a+b+c)/3;
+   //   }
 
-       //Swap two functions (Call by value)
+   // Problem 2. Check the number is even or odd 
 
-    /*   public static void swapTwoNumbers(int a , int b){
-              int temp = a;
-              a =b ;
-              b= temp;
-              System.out.println("The value of a is : "+ a);
-              System.out.print("The value of b is : "+ b);
+   // public static boolean isEven(int n){
+   //    if(n%2==0){
+   //       return true;
+   //    }
+   //    return false;
+   // }
 
-       }
-       public static void main(String args[]){
-            Scanner sc= new Scanner(System.in);
-            int a= sc.nextInt();
-            int b= sc.nextInt();  
-            swapTwoNumbers(a,b);
+   // Problem 3. Check given number is pelendrome or not
 
-       }*/
+   //  public static int reverse(int n){
+   //     int rev =0;
+   //     int rem = 0;
+   //     int pow=0;
+   //     while(n>0){
+   //         rem = n%10;
+   //         rev = rev * 10 + rem;
+   //         pow++;
+   //         n = n/10;
+   //     }
+   //     return rev;
+   //  }
+   //  public static boolean palendromCheck(int n){
+   //      int rev = reverse(n);
+   //      System.out.println("The reverse is "+ rev);
+   //      if(rev ==n ){
+   //       return true;
+   //      }
+   //      return false;
+   //  }
 
-       // Product of two numbers
-
-      //  public static int product(int a, int b){
-      //    return a*b;
-      //  }
-      //  public static void main(String args[]){
-      //    int a =32;
-      //    int b =2;
-      //    System.out.print("The product will be "+ product(a,b));
-      //  }
-
-       // Calculate the binomial cofficient 
-
-      //  public static int factorialCalculate(int n){
-      //         int factorial =1;
-      //         for(int i=1; i<=n; i++){
-      //          factorial = factorial*i;
-      //         }
-      //         return factorial;
-      //  }
-      //  public static void calculateBinomial(int n, int r){
-      //        int a = factorialCalculate(n);
-      //        int b = factorialCalculate(r);
-      //        int c = factorialCalculate(n-r);
-
-
-      //        double binomialCofficient = a/(b*c);
-      //        System.out.print("The value will be "+ binomialCofficient);
-      //  }
-      //  public static void main(String args[]){
-         // int n= 5;
-         // int r= 3;
-         // calculateBinomial(n,r);                }
-
-      //   *********************** // check the number is prime or not using functions***************************8
-      //   public static boolean isPrime(long n){
-      //    boolean isPrime= true;
-
-      //    if(n<2){
-      //       return false;
-
+   // Problem 4. Print sum of the given integer
+    
+      // public static int digitSum(int n){
+      //    int rem =0;
+      //    int sum =0;
+      //    while(n>0){
+      //       rem = n %10;
+      //       sum = sum + rem;
+      //       n = n/10;
       //    }
-      //    if(n==2){
-      //       return isPrime;
-      //    }
-      //    for(int i=2; i<= Math.sqrt(n); i++){
-      //       if(n%i== 0){
-      //          return false ;
-      //       }
-      //    }
-      //    return isPrime;
-      //   }
-
-      //   public static void printPrime(int range){
-      //    for(int i=2; i<=range;i++){
-      //       boolean check= isPrime(i);
-      //       if(check){
-      //          System.out.print(i+" ,");
-      //       }
-      //    }
-      //   }
-      //   public static void main(String args[]){
-      //    Scanner sc = new Scanner(System.in);
-      //    int n= sc.nextInt();
-      //    printPrime(n);
-         
-      //   }
-
-         //  ********************8 // Binary to decimal /******************8 */
-
-         public static int binaryTODec(int n){
-            int decimal=0;
-            int pow= 0;
-            int lastDigit= 0;
-
-            while(n>0){
-               lastDigit= n%10;
-               decimal = decimal +(lastDigit * (int)Math.pow(2,pow));
-               pow++;
-               n= n/10;
-            }
-            return decimal;
-         }
-         public static void main(String args[]){
-            int n =1001;
-            System.out.print(binaryTODec(n));
-
-         }
- 
- 
-    }
+      //    return sum;
+      // }
 
 
+
+   public static void main(String args[]){
+      //1. int i=12;
+      // int j =23;
+      // int k = 13;
+      // System.out.print(average(i,j,k));
+
+      // 2.int n = 22;
+      // System.out.print(isEven(n));
+
+      //3. int n = 122;
+      // System.out.print(palendromCheck(n));
+
+      // 4. int n= 1234;
+      // System.out.print("The sum will be "+ digitSum(n));
+
+   }
+}
