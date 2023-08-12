@@ -1,74 +1,81 @@
-import java.util.*;
 public class Array{
 
-    // Linear Search 
+  //  public static int binarySearch(int arr[], int key){
+  //  for(int i=0; i<=arr.length -1; i++){
+  //   if(key== arr[i]){
+  //     return i;
+  //   }
+  //  }
+  //  return -1;
+  //  }
 
-    // public static int linearSearch(int arr[] , int key){
-    //     for(int i=0; i< arr.length ; i++){
-    //         if(key== arr[i]){
-    //             return i;
-    //         }
+  //  public static int findLargest(int arr[]){
+  //      int max = Integer.MIN_VALUE ;
+  //      for(int i=0; i<=arr.length -1; i++){
+  //       if(max < arr[i]){
+  //         max= arr[i];
+  //       }
+
+  //      }
+  //      return max;
+  //  }
+
+  //  public static void reverseArray(int arr[]){
+  //   int first= 0;
+  //   int last= arr.length-1;
+  //   while(first<last){
+  //     int temp = arr[first];
+  //     arr[first]= arr[last];
+  //     arr[last]= temp;
+  //     first++;
+  //     last--;
+  //   }
+  //  }
+
+    // public static void arrayPairs(int arr[]){
+    //   for(int i=0; i<arr.length-1; i++){
+    //     for(int j=i+1; j<arr.length; j++){
+    //       System.out.print("("+ arr[i] +" ,"+ arr[j] +"),  " );
     //     }
-    //     return -1;
+    //     System.out.println();
+    //   }
     // }
 
-    
-
-    // binary search 
-   public static int binarySearch(int number[], int key){
-    int si= 0;
-    int ei= (number.length-1);
-    while(si<=ei){
-         int  mid= (ei - si )/2;
-
-          if(number[mid] == key){
-            return mid;
-          }
-          if(key> number[mid]){
-            si=mid+1;
-          }
-          else{
-             ei = mid-1;
-          }
+    //  Print the subarrays and their count 
+public static void arraySubarray(int arr[]){
+    for(int i=0; i <arr.length ; i++){
+      for(int j=0; j <arr.length ; j++){
+         int sum=0;
+        for(int k=i; k<=j; k++){
+          System.out.print(arr[k]+" ");
+          sum= sum+ arr[k];
+        }
+        System.out.println(sum);
+        
+      }
+      System.out.println();
     }
-    return -1;
-   }
-
-    public static void main(String args[]){
-       Scanner sc= new Scanner(System.in);
-
-        // initialization 
-        // 1. 
-        // int arr[]= new int[3];            
-        // 2.
-        // int numbers[] = {1,2,43,22,43};
-
-        // input in the array 
-
-    //    Method 1. simple method 
-    //    arr[0]= sc.nextInt();
-    //    arr[1]= sc.nextInt();
-
-    //    Method 2. taking input through loop 
-    // for(int i=0;i<= arr.length -1;i++){
-    //        arr[i]= sc.nextInt();
-    //  }
-    // }
-
-    // To print the array we can use loop or simply print the value one by one 
-
-    // for(int j=0; j <= arr.length-1;j++){
-        // System.out.println("The value on "+ j +" index is :" + arr[j]);
-    // }
-// }
-
-//   Linear Search 
-    //  int arr[] ={2,4,5,7,12,14};
-    //  System.out.print("The key is found in index "+ linearSearch(arr ,22) );
-
-     // Binary search 
-     int number[]= {12,34,56,67,68,96};
-     System.out.print("The key is index " + binarySearch(number , 45);
-
 }
+  public static void main(String args[]){
+    // binary search 
+    int arr[]={12,3,2,7,10,4};
+    // System.out.println("The key index will be "+ binarySearch(arr, 23));
+
+    //  find the largest 
+    // System.out.print("The largest number is : "+ findLargest(arr ));
+
+    // to reverse the array
+    // reverseArray(arr);
+
+    // for(int i=0;i<= arr.length-1;i++){
+    //   System.out.print(arr[i] + " ");
+    // }
+
+
+    // to print the array pairs
+    // arrayPairs(arr);
+
+    // print subarrays and their count 
+    arraySubarray(arr);
+  }
 }
