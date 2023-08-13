@@ -1,3 +1,4 @@
+import java.util.*;
 public class Array{
 
   //  public static int binarySearch(int arr[], int key){
@@ -42,7 +43,7 @@ public class Array{
     // }
 
     //  Print the subarrays and their count 
-public static void arraySubarray(int arr[]){
+/*public static void arraySubarray(int arr[]){
     for(int i=0; i <arr.length ; i++){
       for(int j=0; j <arr.length ; j++){
          int sum=0;
@@ -55,13 +56,85 @@ public static void arraySubarray(int arr[]){
       }
       System.out.println();
     }
+}*/
+
+//  max sum (Simple approch )
+ /* public static int maxSubArray(int arr[]){
+    int maxSum= Integer.MIN_VALUE;
+
+    for(int i=0; i<=arr.length -1; i++){
+      for(int j=i; j<=arr.length-1; j++){
+          int sum=0;
+          for(int k=i;k<=j ; k++){
+            sum += arr[k];
+          }
+          System.out.println(sum);
+
+          if(maxSum<sum ){
+            maxSum = sum;
+          }
+
+      }
+    }
+    return maxSum;   */
+  
+
+//  kadanes algorithm for max sum 
+
+/*public static int kadanes(int arr[]){
+
+  int max_sum = Integer.MIN_VALUE;
+  int currSum =0;
+  for(int i=0; i<arr.length; i++){
+     if((arr[i]+ currSum) <0){
+     currSum =0;
+     }
+     else{
+      currSum += arr[i];
+     }
+     if(max_sum< currSum){
+      max_sum = currSum;
+     }
+  }
+  return max_sum;
+}*/
+
+// Calculating trapped water 
+
+public static int trapWaterCalculate(int arr[]){
+  int n = arr.length;
+  // left max array
+  int left_max[] = new int[n];
+  left_max[0]= arr[0];
+  for(int i=1; i<n; i++){
+        left_max[i]= Math.max(arr[i], left_max[i-1]);
+  }
+
+  // for right max array
+  int right_max[]= new int[n];
+  right_max[n-1]=arr[n-1];
+  for(int j=n-2; j>=0; j--){
+      right_max[j]= Math.max(arr[j], right_max[j+1]);
+  }
+
+
+  // water trapped    
+  int waterTrapped =0;
+  for(int i=0; i<n ;i++){
+    waterTrapped += (Math.min(left_max[i],right_max[i]) - arr[i])* 1;
+  
+  }
+return waterTrapped;
 }
+
+
+
   public static void main(String args[]){
-    // binary search 
+    // binary search in an array
     int arr[]={12,3,2,7,10,4};
     // System.out.println("The key index will be "+ binarySearch(arr, 23));
 
-    //  find the largest 
+    //  find the largest in an array 
     // System.out.print("The largest number is : "+ findLargest(arr ));
 
     // to reverse the array
@@ -72,10 +145,19 @@ public static void arraySubarray(int arr[]){
     // }
 
 
-    // to print the array pairs
+    // to print the array pairs in the given array
     // arrayPairs(arr);
 
     // print subarrays and their count 
-    arraySubarray(arr);
+    // arraySubarray(arr);
+
+    //  Find the sum of subarrays and print the max sum of subarrays
+    // System.out.print("The max sum of subarray will be : "+ maxSubArray(arr));
+
+  //  finding the sum of subarrays through kadanes algorithm 
+    // System.out.print("The max sum will be : "+ kadanes(arr));
+
+  //  Calculating trapped water in bars 
+    System.out.print( "The total trapped water in bars will be : " + trapWaterCalculate(arr)+ " units square");
   }
 }
