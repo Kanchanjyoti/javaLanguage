@@ -127,6 +127,32 @@ public static int trapWaterCalculate(int arr[]){
 return waterTrapped;
 }
 
+// max Profit problem 
+ public static int max_profit(int arr[]){
+     int max_sell[]=new int[arr.length];
+     for(int i=0;i<arr.length-1; i++){
+      int max=0;
+      for(int j=i+1;j <arr.length; j++){
+           if(max<arr[j]){
+            max = arr[j];
+           }
+           max_sell[i]= max;
+      }
+     }
+     max_sell[arr.length-1]=0;
+
+    //  max profit Calculating
+    int max_profit=0;
+     for(int i=0;i<arr.length;i++){
+          if((max_sell[i]-arr[i])>max_profit){
+             max_profit= max_sell[i]-arr[i];
+          }
+
+     }
+     return max_profit;
+ }
+
+
 
 
   public static void main(String args[]){
@@ -158,6 +184,10 @@ return waterTrapped;
     // System.out.print("The max sum will be : "+ kadanes(arr));
 
   //  Calculating trapped water in bars 
-    System.out.print( "The total trapped water in bars will be : " + trapWaterCalculate(arr)+ " units square");
+    // System.out.print( "The total trapped water in bars will be : " + trapWaterCalculate(arr)+ " units square");
+
+    // Max Profit after buying stocks
+
+    System.out.print("The max profit will be : "+ max_profit(arr));
   }
 }
