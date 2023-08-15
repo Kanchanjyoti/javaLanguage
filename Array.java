@@ -101,49 +101,46 @@ public class Array{
 
 // Calculating trapped water 
 
-public static int trapWaterCalculate(int arr[]){
-  int n = arr.length;
-  // left max array
-  int left_max[] = new int[n];
-  left_max[0]= arr[0];
-  for(int i=1; i<n; i++){
-        left_max[i]= Math.max(arr[i], left_max[i-1]);
-  }
+// public static int trapWaterCalculate(int arr[]){
+//   int n = arr.length;
+//   // left max array
+//   int left_max[] = new int[n];
+//   left_max[0]= arr[0];
+//   for(int i=1; i<n; i++){
+//         left_max[i]= Math.max(arr[i], left_max[i-1]);
+//   }
 
-  // for right max array
-  int right_max[]= new int[n];
-  right_max[n-1]=arr[n-1];
-  for(int j=n-2; j>=0; j--){
-      right_max[j]= Math.max(arr[j], right_max[j+1]);
-  }
+//   // for right max array
+//   int right_max[]= new int[n];
+//   right_max[n-1]=arr[n-1];
+//   for(int j=n-2; j>=0; j--){
+//       right_max[j]= Math.max(arr[j], right_max[j+1]);
+//   }
 
 
-  // water trapped    
-  int waterTrapped =0;
-  for(int i=0; i<n ;i++){
-    waterTrapped += (Math.min(left_max[i],right_max[i]) - arr[i])* 1;
+//   // water trapped    
+//   int waterTrapped =0;
+//   for(int i=0; i<n ;i++){
+//     waterTrapped += (Math.min(left_max[i],right_max[i]) - arr[i])* 1;
   
-  }
-return waterTrapped;
-}
+//   }
+// return waterTrapped;
+// }
 
 // max Profit problem 
- public static int max_profit(int arr[]){
-     int max_sell[]=new int[arr.length];
-     for(int i=0;i<arr.length-1; i++){
-      int max=0;
-      for(int j=i+1;j <arr.length; j++){
-           if(max<arr[j]){
-            max = arr[j];
-           }
-           max_sell[i]= max;
-      }
-     }
-     max_sell[arr.length-1]=0;
+ public static int maxProfit(int arr[]){
+        int n= arr.length;
+     int max_sell[]=new int[n];
+
+        max_sell[n-1]=0;
+          for(int j= n-2 ; j>=0; j--){
+              max_sell[j]=Math.max(arr[j+1], max_sell[j+1]);
+          }
+        
 
     //  max profit Calculating
     int max_profit=0;
-     for(int i=0;i<arr.length;i++){
+     for(int i=0;i<n;i++){
           if((max_sell[i]-arr[i])>max_profit){
              max_profit= max_sell[i]-arr[i];
           }
@@ -188,6 +185,6 @@ return waterTrapped;
 
     // Max Profit after buying stocks
 
-    System.out.print("The max profit will be : "+ max_profit(arr));
+    System.out.print("The max profit will be : "+ maxProfit(arr));
   }
 }
