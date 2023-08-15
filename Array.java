@@ -101,31 +101,28 @@ public class Array{
 
 // Calculating trapped water 
 
-// public static int trapWaterCalculate(int arr[]){
-//   int n = arr.length;
-//   // left max array
-//   int left_max[] = new int[n];
-//   left_max[0]= arr[0];
-//   for(int i=1; i<n; i++){
-//         left_max[i]= Math.max(arr[i], left_max[i-1]);
-//   }
+ public static int waterTrapped(int arr[]){
+        int n = arr.length;
+      // left max 
 
-//   // for right max array
-//   int right_max[]= new int[n];
-//   right_max[n-1]=arr[n-1];
-//   for(int j=n-2; j>=0; j--){
-//       right_max[j]= Math.max(arr[j], right_max[j+1]);
-//   }
-
-
-//   // water trapped    
-//   int waterTrapped =0;
-//   for(int i=0; i<n ;i++){
-//     waterTrapped += (Math.min(left_max[i],right_max[i]) - arr[i])* 1;
-  
-//   }
-// return waterTrapped;
-// }
+      int left_max[]= new int[n];
+      left_max[0]= arr[0];
+      for(int i=1; i<n; i++){
+        left_max[i]= Math.max(arr[i], left_max[i-1]);
+      }
+     int right_max[]= new int[n];
+      right_max[n-1]= arr[n-1];
+      for(int j=n-2; j>=0;j--){
+        right_max[j]= Math.max(arr[j], right_max[j+1]);
+      }
+    // Water calculate
+    int water_area = 0;
+    for(int k=0; k<n;k++){
+       water_area += Math.min(left_max[k], right_max[k])- arr[k]; 
+    }
+    return water_area;
+    
+    }
 
 // max Profit problem 
  public static int maxProfit(int arr[]){
@@ -181,7 +178,7 @@ public class Array{
     // System.out.print("The max sum will be : "+ kadanes(arr));
 
   //  Calculating trapped water in bars 
-    // System.out.print( "The total trapped water in bars will be : " + trapWaterCalculate(arr)+ " units square");
+    // System.out.print( "The total trapped water in bars will be : " + waterTrapped(arr)+ " units square");
 
     // Max Profit after buying stocks
 
