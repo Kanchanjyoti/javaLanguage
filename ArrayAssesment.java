@@ -77,11 +77,24 @@ public class ArrayAssesment{
     return water_area;
     
     }
+    // Finding a different number whose sum is zero in an array 
+       public static void findingTriplet(int arr[]){
+        for(int i=0;i<arr.length-2; i++){
+          for(int j= i+1; j<arr.length-1; j++){
+            for(int k=j+1; k<arr.length; k++){
+              if(arr[i]+arr[j]+arr[k]== 0){
+                System.out.println(" ("+ arr[i]+" "+arr[j]+" "+arr[k]+" )");
+              }
+            }
+          }
+        }
+       }
     public static void main(String args[]){
-        int arr[]={4,2,0,3,2,5}; 
+        int arr[]={-1,0,1,2,-1,-4}; 
         // System.out.print(repetiotionCheck(arr));
         // System.out.print(rotationByPoint(arr,3 , 7));
         // System.out.print(profitArray(arr));
-        System.out.print("The total water trapped is "+ waterTrapped(arr));
+        // System.out.print("The total water trapped is "+ waterTrapped(arr));
+         findingTriplet(arr);
     }
 }
