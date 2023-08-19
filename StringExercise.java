@@ -27,6 +27,34 @@ public class StringExercise{
     }
 
     // function for anagram 
+    public static boolean isAnagram(String str1, String str2){
+        // convert both of them into lowercase so we dont have to check for different case 
+        str1= str1.toLowerCase();
+        str2= str2.toLowerCase();
+
+        //  we will check whether their lengths are same or not 
+        if(str1.length()== str2.length()){
+            // converting them to char array
+            char ch1[]= str1.toCharArray();
+            char ch2[]= str2.toCharArray();
+
+            // sort them seperately 
+            Arrays.sort(ch1);
+            Arrays.sort(ch2);
+            
+            boolean result= Arrays.equals(ch1, ch2);
+            if(result){
+                return true;
+            }
+            else{
+                return false;
+            }
+
+        }
+        else{
+            return false;
+        }
+    }
     
 
         
@@ -47,6 +75,6 @@ public class StringExercise{
 
         // Checking whether two strings are anagram or not
         String s1= "race"; String s2= "care";
-        // System.out.println(isAnagram(s1,s2));
+        System.out.println(isAnagram(s1,s2));
     }
 }
