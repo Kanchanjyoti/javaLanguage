@@ -70,6 +70,7 @@ public class StringExercise{
         String st2= "Kanchan Jyoti";
         System.out.println(st.equals(st1)+" "+ st.equals(st2));
 
+         // replace keyword 
         String st3= "kenchan".replace("e","a");
         System.out.println(st3);
 
