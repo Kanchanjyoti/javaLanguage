@@ -1,3 +1,4 @@
+import java.util.*;
 public class BitManipulation{
     // checking whether the number is even or odd
     public static void checkEven(int n){
@@ -41,6 +42,27 @@ public class BitManipulation{
          return number;
     }
 
+    //  Clear last ith bits
+
+    public static int clearLastBits(int number, int index){
+        int bitMask= (~0)<< (index+1) ;
+        number = number & bitMask ;
+        return number;
+    }
+
+    // Clear the range of bits
+    public static int clearRange(int number, int j, int i){
+        int a= (~0)<< (j+1);
+        int b= (int)Math.pow(2,i) -1;
+        number= number & (a|b);
+        return number;
+    }
+
+    // Checking whether the given number is power of 2 or not 
+    public static boolean isPowerOfTwo(int number){
+        return ((number & (number-1)) == 0); 
+    }
+
     public static void main(String args[]){
         // binary And(&) 
         System.out.println(5 & 2);
@@ -71,6 +93,15 @@ public class BitManipulation{
 
         //  Update ith bit 
         System.out.println(updateIthBit(15, 2, 0));
+
+        // Clear last ith bits
+        System.out.println(clearLastBits(13,2));
+
+        //  Clear the range of bits 
+        System.out.println(clearRange(22, 2,0));
+
+        // Check if a number is a power of 2 or not 
+        System.out.println(isPowerOfTwo(32));
 
     }
 }
