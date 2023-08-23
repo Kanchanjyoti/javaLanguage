@@ -100,7 +100,45 @@ public class RecurssionBasics {
     }
     return (x * power * power);
   }
+    //  Tiling problem code
+    public static int tiling(int n){
+      
+      if(n==1 || n==0){
+        return 1;
+      }
+      int horizontal= tiling(n-2);
+      int vertical = tiling(n-1);
+      return horizontal+vertical;
 
+    }
+
+  //   Friend pairing problem 
+  public static int friendPair(int n){
+    if(n==1){
+      return 1;
+    }
+    if(n==2){
+      return 2;
+    }
+    // if single
+    int single= friendPair(n-1);
+    int pair= friendPair(n-2);
+    return (single + (n-1) * pair);
+  }
+  // Print the binary number with no concecutive set number 
+  public static void noConsecutiveSet(int n, int lastPlace, StringBuilder str){
+    if(n==0){
+      System.out.println(str);
+      return;
+    }
+    if(lastPlace== 0){
+       noConsecutiveSet(n-1, 0, str.append("0"));
+       noConsecutiveSet(n-1, 1, str.append("1"));
+    }
+    else{
+       noConsecutiveSet(n-1, 0, str.append("0"));
+    }
+  }
   public static void main(String args[]) {
     int number = 20;
     //    Printing in decreasing order
@@ -126,5 +164,13 @@ public class RecurssionBasics {
     System.out.println(powerOfN(5, 3));
     //  Optimesed code for power of x
     System.out.println(opPowerOfN(3,5));
+    // Tiling problem 
+    System.out.println(tiling(4));
+    //  Friend pairing 
+    System.out.println(friendPair(3));
+    //  Binary string problem 
+    StringBuilder str= new StringBuilder("");
+    noConsecutiveSet(3, 0, str);
+
   }
 }
