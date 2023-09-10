@@ -17,9 +17,10 @@ public class RecurssionExer{
          int lastNumber= number%10;
          convertToString(number/10, arr);
          System.out.print(arr[lastNumber] + " ");
-        
+        }
 
-    }
+        //  To find the length of string 
+        
     public static void main(String args[]){
     int arr[]= {3,2,4,5,6,2,7,2,2};
     findKey(arr, 2, 0 );
