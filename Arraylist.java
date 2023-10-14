@@ -20,7 +20,57 @@ public class Arraylist{
      }
      return maxWater;
 
-}    public static void main(String[] args){
+}   
+// Solution5.  Optimised Code of store Water
+   public static int storeWaterOp(ArrayList<Integer> height){
+    int maxWater=0;
+    int lp=0;
+    int rp=height.size()-1;
+    while(lp<rp){
+        int ht= Math.min(height.get(lp),height.get(rp));
+        int width= rp-lp;
+        int currentWater= ht*width;
+        maxWater= Math.max(maxWater, currentWater);
+        if(height.get(lp)<height.get(rp)){
+            lp++;
+        }
+        else{
+            rp--;
+        }
+    }
+        return maxWater;
+   }
+
+//    Solution 6. Brute force approch
+      public static boolean pairSum(ArrayList<Integer> pairList, int target){
+          for(int i=0; i<pairList.size(); i++){
+            for(int j=i+1; j<pairList.size(); j++){
+                if((pairList.get(i)+pairList.get(j))== target){
+                    return true;
+                }
+            }
+          }
+          return false;
+      }
+
+//   second solution : optimized version 
+    public static boolean pairSumOp(ArrayList<Integer> pairList, int target){
+        int lp= 0;
+        int rp=pairList.size()-1;
+        while(lp<rp){
+            if(pairList.get(lp)+pairList.get(rp)== target){
+                return true;
+            }
+            else if(pairList.get(lp)+pairList.get(rp)< target){
+                lp++;
+            }
+            else{
+                rp--;
+            }
+        }
+        return false;
+    }
+ public static void main(String[] args){
            // Syntex: ArrayList<DataType_Name> variable_Name = new ArrayList<>();
            ArrayList<Integer> list = new ArrayList<>();
            list.add(1);
@@ -93,6 +143,19 @@ System.out.println(mainList);
    height.add(7);  
 
 System.out.println("The maximum water stored between two heights is "+ storeWater(height));
+
+//  Optimised Code: 
+System.out.println("The maximum water stored between two heights is "+ storeWaterOp(height));
+
+//   Problem 6. Find if any pair in a sorted arraylist has target sum
+   ArrayList<Integer> pairList= new ArrayList<>();
+   pairList.add(2);
+   pairList.add(3);
+   pairList.add(8);
+   pairList.add(10);
+ System.out.println(pairSum(pairList, 20));
+//  Optimised code 
+ System.out.println(pairSumOp(pairList, 5));
 
 
     }
